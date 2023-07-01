@@ -1,0 +1,54 @@
+{
+  "\u0000vite/modulepreload-polyfill": [
+  ],
+  "index.html": [
+  ],
+  "node_modules/.pnpm/svelte-routing@1.11.0/node_modules/svelte-routing/src/Link.svelte": [
+  ],
+  "node_modules/.pnpm/svelte-routing@1.11.0/node_modules/svelte-routing/src/Route.svelte": [
+  ],
+  "node_modules/.pnpm/svelte-routing@1.11.0/node_modules/svelte-routing/src/Router.svelte": [
+  ],
+  "node_modules/.pnpm/svelte-routing@1.11.0/node_modules/svelte-routing/src/contexts.js": [
+  ],
+  "node_modules/.pnpm/svelte-routing@1.11.0/node_modules/svelte-routing/src/history.js": [
+  ],
+  "node_modules/.pnpm/svelte-routing@1.11.0/node_modules/svelte-routing/src/utils.js": [
+  ],
+  "node_modules/.pnpm/svelte@3.59.2/node_modules/svelte/internal/index.mjs": [
+  ],
+  "node_modules/.pnpm/svelte@3.59.2/node_modules/svelte/store/index.mjs": [
+  ],
+  "src/App.svelte": [
+  ],
+  "src/app.css": [
+  ],
+  "src/components/alltodo.svelte": [
+  ],
+  "src/components/edit-modal.svelte": [
+  ],
+  "src/components/edit-modal.svelte?svelte&type=style&lang.css": [
+  ],
+  "src/components/error.svelte": [
+  ],
+  "src/components/login.svelte": [
+  ],
+  "src/components/navbar.svelte": [
+  ],
+  "src/components/signup.svelte": [
+  ],
+  "src/components/todo-detailes.svelte": [
+  ],
+  "src/entry-client.js": [
+  ],
+  "src/store/addtodo.js": [
+  ],
+  "src/store/data.js": [
+  ],
+  "src/store/edit.js": [
+  ],
+  "src/store/loginStore.js": [
+  ],
+  "src/store/signup.js": [
+  ]
+}
