@@ -715,16 +715,34 @@ const Router = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 const todoTitle = writable(null);
 const todoStatus = writable(null);
+const dummyProfile = "/assets/no-profile-pic-2b9c0914.jpg";
 const Navbar = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<nav class="bg-white pr-4 shadow-lg h-14"><div class="container mx-auto flex justify-end items-center h-full"><button class="px-4 py-2 bg-blue-500 text-white rounded">Logout </button></div></nav>`;
+  return `<nav class="flex justify-between items-center bg-white pr-4 pl-4 shadow-lg h-14"><span class="flex items-center w-[42px] h-[42px] relative rounded-full px-2 py-1"><img class="absolute -z-0 w-full h-full rounded-full top-0 left-0"${add_attribute("src", dummyProfile, 0)} alt="PF"></span>
+  <div class="container w-max flex justify-end items-center h-full"><button class="px-4 py-2 bg-blue-500 text-white rounded">Logout </button></div></nav>`;
 });
 const todos = writable([]);
+const alltodo_svelte_svelte_type_style_lang = "";
+const css$1 = {
+  code: ".profile.svelte-11a1gg2{display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}",
+  map: null
+};
 const Alltodo = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let allTodos;
   todoStatus.subscribe((value) => value);
   todoTitle.subscribe((value) => value);
   todos.subscribe((value) => allTodos = value);
-  return `<main>${validate_component(Navbar, "Navbar").$$render($$result, {}, {}, {})}
+  $$result.css.add(css$1);
+  return `<main class="relative"><div class="profile w-64 bg-white absolute shadow-lg rounded-lg p-4 svelte-11a1gg2"><div class="flex justify-center"><img${add_attribute("src", dummyProfile, 0)} alt="PF" class="w-12 h-12 rounded-full"></div>
+  <div class="flex items-center justify-center mt-2"><span class="text-lg font-semibold">John Doe</span></div>
+  <div class="mt-4"><p class="text-center">Additional Information</p>
+    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+  <div class="mt-4 flex justify-center"><button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-sm text-sm">Change Name
+    </button>
+    <button class="bg-blue-500 hover:bg-blue-600 relative overflow-hidden text-white font-bold py-1 px-2 rounded-sm text-sm ml-2"><input type="file" class="w-full h-full opacity-0 absolute" name="file" id="file">
+      Change Image
+    </button></div></div>
+
+  ${validate_component(Navbar, "Navbar").$$render($$result, {}, {}, {})}
   <div class="container mx-auto px-4 py-8"><div class="mx-auto bg-white rounded-lg shadow-lg overflow-hidden md:w-[90%] sm:w-5/6"><div class="bg-gray-200 px-4 py-6"><h1 class="text-2xl text-gray-800 font-bold">Todo List</h1></div>
       <div class="bg-white px-4 py-6"><form class="mb-4"><div class="flex items-center border-b border-gray-200 pb-2"><input type="text" class="flex-grow outline-none px-2 py-1 text-gray-700" placeholder="Add a task...">
             <button type="submit" class="ml-4 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg">Add
