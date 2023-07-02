@@ -5,7 +5,9 @@ import Navbar from './navbar.svelte';
 import { navigate } from 'svelte-routing';
 import { onMount } from 'svelte';
 import { todos} from '../store/data.js';
-let allTodos;
+import dummyProfile from "../assets/no-profile-pic.jpg"
+
+  let allTodos;
 let title;
 let status;
 
@@ -39,7 +41,40 @@ onMount(() => {
 });
 </script>
 
-<main>
+<style>
+  .profile{
+    display:none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+</style>
+
+<main class="relative">
+  <div class="profile w-64 bg-white absolute shadow-lg rounded-lg p-4">
+  <div class="flex justify-center">
+    <img src={dummyProfile} alt="PF" class="w-12 h-12 rounded-full">
+  </div>
+  <div class="flex items-center justify-center mt-2">
+    <span class="text-lg font-semibold">John Doe</span>
+  </div>
+  <div class="mt-4">
+    <p class="text-center">Additional Information</p>
+    <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+  <div class="mt-4 flex justify-center">
+    <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-1 px-2 rounded-sm text-sm">
+      Change Name
+    </button>
+    <button class="bg-blue-500 hover:bg-blue-600 relative overflow-hidden text-white font-bold py-1 px-2 rounded-sm text-sm ml-2">
+<input type="file" class="w-full h-full opacity-0 absolute" name="file" id="file">
+      Change Image
+    </button>
+  </div>
+</div>
+
   <Navbar />
   <div class="container mx-auto px-4 py-8">
     <div

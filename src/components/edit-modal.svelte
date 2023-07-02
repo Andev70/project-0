@@ -1,6 +1,5 @@
 <script>
   import {modal,todo } from "../store/edit.js"
-
 </script>
 <style>
   .edit-modal{
