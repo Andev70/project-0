@@ -56,7 +56,7 @@ export const signup = async (req, res) => {
     req.body.otp = OTP;
     const user = await User.create(req.body);
     const mailer = user.email;
-    verifyID = user._id;
+    const verifyID = user._id;
     res.status(201).json({
       msg: [
         'your account has been initiated please verify',

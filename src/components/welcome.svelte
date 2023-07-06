@@ -1,9 +1,53 @@
 <script>
   import facebookLogo from "../assets/square-facebook.svg";
-import metaLogo from "../assets/meta-logo.svg";
+  import metaLogo from "../assets/meta-logo.svg";
   import {isLoginForm} from "../store/login-form.js"
+  import {email, password} from "../store/login.js"
+  let userMail;
+  let userPassword;
   let loginForm;
+
+  password.subscribe(value=>userPassword=value)
+  email.subscribe(value=>userMail=value)
   isLoginForm.subscribe(value=>loginForm=value)
+
+  // login user function
+  const login =async()=>{
+try {
+  const res = await fetch("/api/v1/users/login",{
+        method:"POST",
+        headers:{
+          "Content-type":"application/json"
+        },
+        body:JSON.stringify({password:userPassword,email:userMail})
+      })
+      const data = res.json()
+      return data
+} catch (e) {
+  console.log(e.message)
+}
+  }
+
+
+
+  // user signup here
+  const signup =async()=>{
+try {
+  const res = await fetch("/api/v1/users/signup",{
+        method:"POST",
+        headers:{
+          "Content-type":"application/json"
+        },
+        body:JSON.stringify({password:"1234",email:"anupalnath70@gmail.com",username:"hello"})
+      })
+      const data = res.json()
+      return data
+} catch (e) {
+  console.log(e.message)
+}
+  }
+
+
 </script>
   <style>
   .lang-name {
@@ -270,7 +314,11 @@ import metaLogo from "../assets/meta-logo.svg";
         
 
         <div class="facebook-login-area w-[317.09px] px-10 py-2 h-[50.55px]">
-          <button class="log-facebook-btn w-full h-full py-[7px] px-4 flex justify-center items-center gap-x-2">
+          <button on:click={(e)=>{
+                  e.preventDefault()
+                  signup().then(res=>console.log(res))
+                }}
+                        class="log-facebook-btn w-full h-full py-[7px] px-4 flex justify-center items-center gap-x-2">
             <i class="facebook-icon w-[17px] h-[17px]">
               <img
                 src={facebookLogo}
@@ -291,6 +339,10 @@ import metaLogo from "../assets/meta-logo.svg";
 
         <div class="email-input-area w-[317.09px] h-max pb-[6px] px-10">
           <input
+            on:change={(e)=>{
+              email.update(value=>value=e.target.value)
+            }}
+            
             type="email"
             name="email"
             class="email-input w-full h-[37px] outline-none pl-2"
@@ -303,6 +355,9 @@ import metaLogo from "../assets/meta-logo.svg";
 
         <div class="password-input-area w-[317.09px] h-max pb-[6px] px-10">
           <input
+          on:change={(e)=>{
+              password.update(value=>value=e.target.value)
+            }}
             type="password"
             name="password"
             class="password-input w-full h-[37px] outline-none pl-2"
@@ -321,7 +376,11 @@ import metaLogo from "../assets/meta-logo.svg";
       
 
         <section class="login-btn-area w-[317.09px] h-12 px-10 py-2">
-          <button class="login-btn w-full h-full rounded-lg py-[7px] px-4 flex  justify-center items-center">
+          <button on:click={(e)=>{
+            e.preventDefault()
+            login().then(res=>console.log(res))
+          
+          }} class="login-btn w-full h-full rounded-lg py-[7px] px-4 flex  justify-center items-center">
             Log in
           </button>
         </section>

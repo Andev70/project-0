@@ -11,11 +11,10 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: [true, 'password is required'] },
   termsAndConditions: {
     type: Boolean,
-    required: [true, 'please accept our terms and conditions'],
   },
   otp: { type: Number },
   verified: { type: Boolean, default: false },
-  timestamp: { type: Date, default: new Date().getTime() },
+  timestamp: { type: Number, default: new Date().getTime() },
 });
 
 const userModel = mongoose.model('users', userSchema);
