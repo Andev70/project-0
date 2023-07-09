@@ -1,218 +1,48 @@
 <script>
-
-  if(typeof localStorage!== undefined){
-    localStorage.clear()
-    localStorage.setItem("path","home")
-  }
-  import instagramLogo from "../assets/instagram.svg";
-import {Link} from "svelte-routing"
-  import Storie from "./storie.svelte"
-  import Post from "./post.svelte"
-</script>  
-<div class="wrapper w-screen h-screen">
-      <section class="main-body w-full h-full flex">
-    <!--nav start here -->
-          <nav class="navbar w-[72px] border-r border-gray-300 pt-[8px] h-screen pl-[12px] pr-[12px]">
-    
-      <div class="insta-icon-body w-[48px] h-[92px] flex justify-start items-center ">
-        <span class="for-focus w-full h-[48px] rounded-full flex justify-center items-center">
-          <Link
-            to="/users"
-            class="w-max h-max flex justify-center
-          items-center"
-          >
-            <img
-              src={instagramLogo}
-              class="insta-icon w-[24px] h-[24px]"
-              alt="instagram"
-            />
-          </Link>
-        </span>
-      </div>
-      
-    
-      <section class="home-icon w-full h-[64px] flex justify-center items-center">
-        <Link to="/users">
-          <span class="home-focus w-[48px] h-[48px] flex rounded-full justify-center items-center ">
-            <svg
-              aria-label="Home"
-              class="home-reguler-icon"
-              color="rgb(0, 0, 0)"
-              fill="rgb(0, 0, 0)"
-              height="24"
-              role="img"
-              width="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M9.005 16.545a2.997 2.997 0 0 1 2.997-2.997A2.997 2.997 0 0 1 15 16.545V22h7V11.543L12 2 2 11.543V22h7.005Z"
-                fill="none"
-                stroke="currentColor"
-                stroke-linejoin="round"
-                stroke-width="2"
-              ></path>
-            </svg>
-          </span>
-        </Link>
-      </section>
-      
-
-      
-      <section class="search-icon w-full h-[64px] flex justify-center items-center">
-        <Link
-          class="rounded-full w-max h-max flex justify-center items-center"
-          to="search"
-        >
-          <span class="search-focus w-[48px] h-[48px] flex rounded-full justify-center items-center ">
-            <svg
-              aria-label="Explore"
-              class="search-icon"
-              color="rgb(38, 38, 38)"
-              fill="rgb(38, 38, 38)"
-              height="24"
-              role="img"
-              viewBox="0 0 24 24"
-              width="24"
-            >
-              <path
-                d="M19 10.5A8.5 8.5 0 1 1 10.5 2a8.5 8.5 0 0 1 8.5 8.5Z"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              ></path>
-              <line
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                x1="16.511"
-                x2="22"
-                y1="16.511"
-                y2="22"
-              ></line>
-            </svg>
-          </span>
-        </Link>
-      </section>
-      
-
-    
-      <section class="reel-icon w-full h-[64px] flex justify-center items-center">
-        <Link to="reels">
-          <span class="reel-focus w-[48px] h-[48px] flex rounded-full justify-center items-center ">
-            <svg
-              aria-label="Reels"
-              class="reel-svg"
-              color="rgb(38, 38, 38)"
-              fill="rgb(38, 38, 38)"
-              height="24"
-              role="img"
-              viewBox="0 0 24 24"
-              width="24"
-            >
-              <line
-                fill="none"
-                stroke="currentColor"
-                stroke-linejoin="round"
-                stroke-width="2"
-                x1="2.049"
-                x2="21.95"
-                y1="7.002"
-                y2="7.002"
-              ></line>
-              <line
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                x1="13.504"
-                x2="16.362"
-                y1="2.001"
-                y2="7.002"
-              ></line>
-              <line
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                x1="7.207"
-                x2="10.002"
-                y1="2.11"
-                y2="7.002"
-              ></line>
-              <path
-                d="M2 12.001v3.449c0 2.849.698 4.006 1.606 4.945.94.908 2.098 1.607 4.946 1.607h6.896c2.848 0 4.006-.699 4.946-1.607.908-.939 1.606-2.096 1.606-4.945V8.552c0-2.848-.698-4.006-1.606-4.945C19.454 2.699 18.296 2 15.448 2H8.552c-2.848 0-4.006.699-4.946 1.607C2.698 4.546 2 5.704 2 8.552Z"
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              ></path>
-              <path
-                d="M9.763 17.664a.908.908 0 0 1-.454-.787V11.63a.909.909 0 0 1 1.364-.788l4.545 2.624a.909.909 0 0 1 0 1.575l-4.545 2.624a.91.91 0 0 1-.91 0Z"
-                fill-rule="evenodd"
-              ></path>
-            </svg>
-          </span>
-        </Link>
-      </section>
-      
-
-      
-      <section class="messanger-icon w-full h-[64px] flex justify-center items-center">
-        <Link to="/direct/inbox">
-          <span class="messanger-focus w-[48px] h-[48px] flex rounded-full justify-center items-center ">
-            <svg
-              aria-label="Messenger"
-              class="messanger-svg"
-              color="rgb(38, 38, 38)"
-              fill="rgb(38, 38, 38)"
-              height="24"
-              role="img"
-              viewBox="0 0 24 24"
-              width="24"
-            >
-              <title>Messenger</title>
-              <path
-                d="M12.003 2.001a9.705 9.705 0 1 1 0 19.4 10.876 10.876 0 0 1-2.895-.384.798.798 0 0 0-.533.04l-1.984.876a.801.801 0 0 1-1.123-.708l-.054-1.78a.806.806 0 0 0-.27-.569 9.49 9.49 0 0 1-3.14-7.175 9.65 9.65 0 0 1 10-9.7Z"
-                fill="none"
-                stroke="currentColor"
-                stroke-miterlimit="10"
-                stroke-width="1.739"
-              ></path>
-              <path
-                d="M17.79 10.132a.659.659 0 0 0-.962-.873l-2.556 2.05a.63.63 0 0 1-.758.002L11.06 9.47a1.576 1.576 0 0 0-2.277.42l-2.567 3.98a.659.659 0 0 0 .961.875l2.556-2.049a.63.63 0 0 1 .759-.002l2.452 1.84a1.576 1.576 0 0 0 2.278-.42Z"
-                fill-rule="evenodd"
-              ></path>
-            </svg>
-          </span>
-        </Link>
-      </section>
-  
-    </nav>
-        <!-- nav end here-->
-
-<!--main posts and sotries starts here-->
-    <main class="main-contents overflow-scroll w-[764.73px] h-screen ">
-  
-      <div class="contents-scrolable w-full h-max flex flex-col">
-        <!-- user stories start here -->
-           <Storie/>
-        <!-- user stories finished here -->
+  import { BottomNav, BottomNavItem, Tooltip,DarkMode } from "flowbite-svelte"
+  import Post from "./posts.svelte"
+</script>
 
 
-        <!-- user post start here  -->
-<Post/>
-        <!-- user post finished here -->
-        
-      </div>
-    </main>
-<!-- user main strie and post feed end here-->
-      </section>
+    <section class="wrapper overflow-hidden bg-background-100 w-screen h-screen pb-[80px]">
+  <div class="w-full h-full  overflow-scroll">
+  <Post/>
+  <Post/>
+  <Post/>
     </div>
-
+<BottomNav  position="fixed " navType="application" classInner="grid-cols-5">
+  <BottomNavItem  btnName="Home" appBtnPosition="left">
+      <svg class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+      </svg>
+      <Tooltip arrow={false}>Home</Tooltip>
+  </BottomNavItem>
+  <BottomNavItem btnName="Wallet" appBtnPosition="middle">
+      <svg class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path>
+        <path clip-rule="evenodd" fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"></path>
+      </svg>
+      <Tooltip arrow={false}>Wallet</Tooltip>
+  </BottomNavItem>
+  <div class="flex items-center justify-center">
+    <BottomNavItem btnName="Create new item" appBtnPosition="middle" btnClass="inline-flex items-center justify-center w-10 h-10 font-medium bg-primary-600 rounded-full hover:bg-primary-300 group  focus:ring-primary-300 focus:outline-none dark:focus:ring-primary-800">
+        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"></path>
+        </svg>
+      <Tooltip arrow={false}>Create new item</Tooltip>
+    </BottomNavItem>
+  </div>
+  <BottomNavItem btnName="Settings" appBtnPosition="middle">
+      <svg class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z"></path>
+      </svg>
+    <Tooltip arrow={false}>Settings</Tooltip>
+  </BottomNavItem>
+  <BottomNavItem btnName="Profile" appBtnPosition="right">
+      <svg class="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-primary-600 dark:group-hover:text-primary-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path clip-rule="evenodd" fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"></path>
+      </svg>
+      <Tooltip arrow={false}>Profile</Tooltip>
+  </BottomNavItem>
+</BottomNav>
+    </section>

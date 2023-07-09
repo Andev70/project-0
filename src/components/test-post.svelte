@@ -91,11 +91,135 @@ import demoPostImg from "../assets/cld-sample-3.jpg";
   color: #b3dbff;
   font-weight: 600;
 }
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    .post-area-parent {
+      padding: 2rem;
+    }
+
+    .post-wrapper {
+      gap: 2rem;
+    }
+
+    /* Adjust width of post container */
+    .post-first-parent {
+      width: 100%;
+    }
+
+    /* Adjust width of post header */
+    .profile-info {
+      width: 100%;
+    }
+
+    /* Adjust size of profile picture */
+    .profile-dp-post {
+      width: 40px;
+      height: 40px;
+    }
+
+    /* Reduce font sizes for better readability */
+    .user-name-post,
+    .count-number,
+    .count-text,
+    .name,
+    .caption,
+    .more-caption,
+    .all-comment,
+    .time-num,
+    .time-text,
+    .comment-user,
+    .comment-input::placeholder,
+    .post-btn {
+      font-size: 12px;
+    
+    }
+
+    /* Reduce height of post image container */
+    .post-images {
+      height: 300px;
+    }
+
+    /* Adjust height of post interaction area */
+    .post-interection-area {
+      height: 40px;
+    }
+
+    /* Adjust font size of post interaction icons */
+    .like-regular-svg,
+    .comment-svg,
+    .share-svg,
+    .save-svg
+     {
+      height: 18px;
+      width: 18px;
+    }
+
+    /* Adjust font size of like count */
+    .like-count-area {
+      height: 16px;
+      font-size: 12px;
+    }
+
+    /* Reduce height of post caption area */
+    .caption-parent {
+      margin-top: 1rem;
+    }
+
+    /* Reduce font size of post caption text */
+    .caption {
+      font-size: 12px;
+    }
+
+    /* Reduce font size of "View all" comment text */
+    .comment-all-text {
+      font-size: 12px;
+    }
+
+    /* Reduce font size of comment count */
+    .comment-count {
+      font-size: 12px;
+    }
+
+    /* Reduce font size of comment user and comment text */
+    .comment-user,
+    .comment {
+      font-size: 12px;
+    }
+
+    /* Adjust height of time ago section */
+    .times-ago-parent {
+      height: 18px;
+    }
+
+    /* Adjust font size of time ago text */
+    .time-num,
+    .time-text {
+      font-size: 8px;
+    }
+
+    /* Adjust height of comment input area */
+    .comment-input-area {
+      height: 24px;
+      padding: 4px 0;
+      outline:none;
+    }
+
+    /* Adjust width of comment input */
+    .comment-input {
+      width: 320px;
+      outline:none;
+    }
+
+    /* Adjust font size of post button */
+    .post-btn {
+      font-size: 12px;
+    }
+  }
 
 </style>
 
 
-  <div class="post-area-parent for-padding pt-6 w-full h-max pr-2 pl-2">
+  <div class="post-area-parent for-padding pt-6 w-full h-screen pr-2 pl-2">
       <div class="post-wrapper post-background w-full h-max  flex flex-col items-center gap-y-5">
 
 <!-- single post starts here -->
@@ -337,9 +461,9 @@ import demoPostImg from "../assets/cld-sample-3.jpg";
 
           <!-- post comment area starts here -->
         <section class="comment-input-area h-[30.73px] w-full pr-4 py-[6px]">
-      <div class="content-wrapper w-full h-full flex justify-between items-center">
+      <div class=" overflow-hidden content-wrapper w-full h-full flex justify-between items-center">
         <input
-          class="comment-input w-[424.47px] outline-none"
+          class="comment-input w-[424.47px] border-none  outline-none"
           name="comment-input"
           placeholder="Add a comment..."
           type="text"
@@ -353,9 +477,6 @@ import demoPostImg from "../assets/cld-sample-3.jpg";
         </div>
       </div>
     </section>
-<!-- single post finished here -->
-
-
-        
+<!-- single post finished here --> 
       </div>
     </div>
