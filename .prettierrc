@@ -3,5 +3,6 @@
   "svelteStrictMode": true,
   "svelteAllowShorthand": false,
   "svelteIndentScriptAndStyle": false,
-  "singleQuote":true
+  "singleQuote":true,
+  "quoteProps": "preserve"
 }
