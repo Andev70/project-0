@@ -221,7 +221,7 @@ import share from '../soflex-assets/images/icon/share-solid.svg';
           <img class="w-full h-[35px] rounded-full" src="{postDp}" alt="CP" />
         </span>
         <!-- profile area finished -->
-        <!-- all comment comment c ontent -->
+        <!-- all comment comment content -->
         <section class="all-comment-info ml-2 w-[284.64px] flex flex-col">
           <div class="comment-said h-max w-full p-4">
             <!-- commenter name -->
@@ -267,6 +267,62 @@ import share from '../soflex-assets/images/icon/share-solid.svg';
           </section>
 
           <!-- all comment acvtions -->
+          <!-- all reply content is here -->
+
+          <div class="all-reply-info flex h-max w-full">
+            <!-- profile reply -->
+            <span class="comment-dp w-[35px] h-[35px] rounded-full">
+              <img
+                class="w-full h-[35px] rounded-full"
+                src="{postDp}"
+                alt="CP"
+              />
+            </span>
+
+            <!-- profile reply -->
+            <!-- all reply info -->
+            <section
+              class="replies-info font-sans text-light-100 ml-2 flex flex-col w-[240.64px]"
+            >
+              <div class="comment-said h-max w-full p-4">
+                <!-- commenter name -->
+                <header class="commenter-name flex justify-between h-[22.75px]">
+                  <h1 class="name font-semibold">Frances Guerrero</h1>
+                  <h1 class="ago">5hr</h1>
+                </header>
+                <p class="comment-real">
+                  Removed demands expense account in outward tedious do.
+                  Particular way thoroughly unaffected projection.Removed
+                  demands expense account in outward tedious do. Particular way
+                  thoroughly unaffected projection Removed demands expense
+                  account in outward tedious do. Particular way thoroughly
+                  unaffected projection.Removed demands expense account in
+                  outward tedious do. Particular way thoroughly unaffected
+                  projection.
+                </p>
+              </div>
+              <!-- all reply actions starts                 -->
+              <ul class="w-full h-full flex items-center py-2">
+                <li class="like-comment flex justify-end w-max">
+                  <h1 class="like-name">Like</h1>
+                  <h1 class="comment-likes ml-1">(4)</h1>
+                </li>
+                <li
+                  class="replyw-[60.94px] flex items-center gap-x-[11.2px] ml-[11px]"
+                >
+                  <div class="dot"></div>
+                  <span class="replay-text">
+                    <h1>Reply</h1>
+                  </span>
+                </li>
+              </ul>
+
+              <!-- all reply actions finished -->
+            </section>
+            <!-- all reply info finished -->
+          </div>
+
+          <!-- all reply content finished -->
         </section>
         <!-- all comment contents finished -->
       </div>
