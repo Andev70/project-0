@@ -7,7 +7,7 @@
 
 
   <Router>
-  <Route path="/signup"><Skull/></Route>
+  <Route path="/signup"><Signup/></Route>
   <Route path="/home"><Home/></Route>
   <Route path="/"><WelcomeInstagram/></Route>
   <Route path="*">error</Route>
