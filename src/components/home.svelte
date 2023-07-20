@@ -3,6 +3,7 @@ import Post from './posts.svelte';
 import Navbar from "./navbar.svelte"
 
 import Postpublish from "./post-area.svelte"
+
 </script>
 
 <!-- navbar is starting -->
